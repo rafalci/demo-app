@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@use "../libs/demo-core/src/styling/theming/_pallet" as pallet
+@use "../libs/demo-core/src/styling/theming/_all-theme" as theme
+@use "../libs/demo-core/src/styling/typography/_typography-config" as config
+@use "../libs/demo-core/src/styling/typography/_all-typography" as typography
+
+html
+  height: 100%
+
+body
+  margin: 0
+  background: #f8f8f8
+  height: 100%
+
+$app-theme: pallet.demo-core-theme()
+$app-typography-config: config.demo-core-typography()
+
++theme.application-theme($app-theme)
++typography.application-typography($app-typography-config)

@@ -1,0 +1,13 @@
+@use '~@angular/material/theming' as material
+@use './components/_top-bar' as top-bar
+@use './components/_breadcrumb' as breadcrumb
+
+@mixin application-typography($typography-config)
+  // Material
+  +material.mat-card-typography($typography-config)
+  +material.mat-table-typography($typography-config)
+  // Custom
+  +top-bar.top-bar-typography($typography-config)
+  +breadcrumb.breadcrumb-typography($typography-config)
+  
+  

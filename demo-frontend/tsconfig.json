@@ -11,6 +11,16 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "@lib/demo-core": [
+        "dist/libs/demo-core/*",
+        "dist/libs//demo-core"
+      ],
+      "@lib/proxy": [
+        "dist/libs/proxy/*",
+        "dist/libs/proxy"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,

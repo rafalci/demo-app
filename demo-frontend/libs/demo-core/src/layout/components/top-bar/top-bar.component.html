@@ -1,0 +1,21 @@
+<div class="top-bar">
+  <div class="top-bar__title">
+    <h1 class="logo-text">{{ title | uppercase }}</h1>
+  </div>
+  <div class="top-bar__navigation">
+    <ul class="nav-container">
+      <li 
+        *ngFor="let navItem of navItems"
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a
+          class="nav-item__link"
+          [routerLink]="navItem.path">{{ navItem.label }}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="top-bar__userinfo"></div>
+</div>

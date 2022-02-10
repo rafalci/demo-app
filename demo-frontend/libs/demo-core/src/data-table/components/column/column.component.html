@@ -1,0 +1,21 @@
+<ng-container [ngSwitch]="columnType">
+
+  <!-- text column -->
+  <ng-container *ngSwitchCase="dateColumnType">
+    {{ columnValue | date }}
+  </ng-container>
+
+  <!-- number column -->
+  <ng-container *ngSwitchCase="booleanColumnType">
+    <input
+      type="checkbox"
+      [checked]="columnValue"
+      [disabled]="true"
+    />
+  </ng-container>
+
+  <!-- text, number or default -->
+  <ng-container *ngSwitchDefault>
+    {{ columnValue }}
+  </ng-container>
+</ng-container>

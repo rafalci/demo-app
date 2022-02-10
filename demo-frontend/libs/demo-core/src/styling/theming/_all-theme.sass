@@ -1,0 +1,13 @@
+@use '~@angular/material/theming' as material
+@use './components/_top-bar' as top-bar
+@use './components/_data-table' as data-table
+
+@mixin application-theme($theme)
+  // Material
+  +material.mat-core-theme($theme)
+  +material.mat-card-theme($theme)
+  +material.mat-table-theme($theme)
+  // Custom
+  +top-bar.top-bar-theme($theme)
+  +data-table.data-table-theme($theme)
+  

@@ -1,0 +1,30 @@
+<div class="data-table-container">
+  <table 
+    mat-table
+    class="data-table"
+    [dataSource]="data"
+  >
+    <ng-container
+      class=""
+      *ngFor="let column of tableDefinition.columns"
+      [matColumnDef]="getColumnName(column)"
+    >
+      <th mat-header-cell *matHeaderCellDef>
+        {{column.label | uppercase}}
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <dc-column 
+          [columnName]="column.name"
+          [columnType]="column.columnType"
+          [row]="row"
+        ></dc-column>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+<mat-spinner
+  *ngIf="isDataLoading"
+></mat-spinner>

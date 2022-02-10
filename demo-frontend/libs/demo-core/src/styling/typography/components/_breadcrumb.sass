@@ -1,0 +1,6 @@
+@use '../_utils' as utils
+
+@mixin breadcrumb-typography($config)
+  .breadcrumb-list__item--link,
+  .last-breadcrumb
+    font-family: utils.mat-font-family($config, headline)

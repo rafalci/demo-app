@@ -1,0 +1,13 @@
+@use '~@angular/material/theming' as material
+
+$red: #bb0000
+$grey: #686868
+
+$app-red: (100: lighten($red, 30%), 500: $red, 700: darken($red, 30%), contrast: (100: #fff, 500: #fff, 700: #fff))
+$app-grey: (100: lighten($grey, 30%), 500: $grey, 700: darken($grey, 30%), contrast: (100: #fff, 500: #fff, 700: #fff))
+
+$app-primary-palette: material.mat-palette($app-red)
+$app-accent-palette: material.mat-palette($app-grey)
+
+@function demo-core-theme()
+  @return material.mat-light-theme($app-primary-palette, $app-accent-palette)

@@ -1,0 +1,50 @@
+$spacer: 100px
+
+.top-bar
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  height: 68px
+  margin: 0
+  background: #ffffff
+  padding: 0 $spacer
+  border-top-width: 2px
+  border-top-style: solid
+
+  &__title
+    flex-basis: auto
+    padding-right: 16px
+    white-space: nowrap
+
+  &__navigation
+    flex: 1
+
+  &__userinfo
+    flex-basis: 100px
+
+.logo-text
+  line-height: 29px
+
+.nav-container
+  display: flex
+  flex-direction: row
+  list-style: none
+  height: 100%
+  margin: 0
+  padding-left: 32px
+
+.nav-item
+  line-height: 74px
+  height: 100%
+  padding: 0 20px
+  box-sizing: border-box
+
+  &__link
+    text-transform: uppercase
+    text-decoration: none
+
+  &:hover,
+  &.active
+    font-weight: bold
+    border-bottom-width: 2px
+    border-bottom-style: solid

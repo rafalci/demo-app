@@ -1,0 +1,18 @@
+@use '../_utils' as utils
+
+@mixin top-bar-theme($theme)
+  $primary: map-get($theme, primary)
+  $accent: map-get($theme, accent)
+
+  .top-bar
+    border-top-color: utils.mat-color($primary)
+    +utils.mat-elevation(2)
+
+  .logo-text
+    color: utils.mat-color($primary)
+
+  .nav-item
+    border-bottom-color: utils.mat-color($accent)
+
+    &__link
+      color: utils.mat-color($accent)

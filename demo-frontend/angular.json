@@ -105,6 +105,68 @@
           }
         }
       }
+    },
+    "@lib/demo-core": {
+      "projectType": "library",
+      "root": "libs/demo-core",
+      "sourceRoot": "libs/demo-core/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "libs/demo-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/demo-core/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/demo-core/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/demo-core/src/test.ts",
+            "tsConfig": "libs/demo-core/tsconfig.spec.json",
+            "karmaConfig": "libs/demo-core/karma.conf.js"
+          }
+        }
+      }
+    },
+    "@lib/proxy": {
+      "projectType": "library",
+      "root": "libs/proxy",
+      "sourceRoot": "libs/proxy/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "libs/proxy/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/proxy/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/proxy/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/proxy/src/test.ts",
+            "tsConfig": "libs/proxy/tsconfig.spec.json",
+            "karmaConfig": "libs/proxy/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "demo-frontend"

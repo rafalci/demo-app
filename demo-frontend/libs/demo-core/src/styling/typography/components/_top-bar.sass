@@ -1,0 +1,6 @@
+@use '../_utils' as utils
+
+@mixin top-bar-typography($config)
+  .top-bar__title,
+  .nav-item__link
+    font-family: utils.mat-font-family($config, headline)
