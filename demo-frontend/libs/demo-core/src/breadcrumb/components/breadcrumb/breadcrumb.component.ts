@@ -39,6 +39,6 @@ export class BreadcrumbComponent {
   public getLastBreadcrumb(breadcrumbs: Breadcrumb[]): string | undefined {
     return breadcrumbs?.length
       ? breadcrumbs[breadcrumbs.length - 1].label
-      : undefined
+      : undefined;
   }
 }

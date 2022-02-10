@@ -15,7 +15,7 @@ export class TopBarComponent {
 
   constructor(@Inject(LAYOUT_CONFIG) readonly config: LayoutConfig) {
     if (!config) {
-      throw Error(`The 'LAYOUT_CONFIG' token has not been provided.`)
+      throw Error(`The 'LAYOUT_CONFIG' token has not been provided.`);
     }
     this.title = config.appTitle;
     this.navItems = config.navItems ?? [];    

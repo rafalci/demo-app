@@ -14,7 +14,7 @@ const routes: Routes = [
       breadcrumb: 'Users'
     }
   }
-]
+];
 
 @NgModule({
   imports: [

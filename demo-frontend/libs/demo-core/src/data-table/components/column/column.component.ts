@@ -19,7 +19,7 @@ export class ColumnComponent<T> {
   public columnType!: ColumnType;
 
   @Input()
-  public row!: T
+  public row!: T;
 
   public get columnValue(): any {
     return this.row[this.columnName];

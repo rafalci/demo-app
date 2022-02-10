@@ -26,7 +26,7 @@ export class DataTableComponent<T, R> {
   public get displayedColumns(): string[] {
     return this.tableDefinition.columns.map(
       column => column.name.toString()
-    )
+    );
   }
 
   public getColumnName(column: ColumnDefinition<T>): string {

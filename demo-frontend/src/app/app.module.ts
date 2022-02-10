@@ -15,7 +15,7 @@ const NAV_ITEMS: NavItem[] = [
     path: 'users',
     label: 'Users'
   }
-]
+];
 
 @NgModule({
   declarations: [

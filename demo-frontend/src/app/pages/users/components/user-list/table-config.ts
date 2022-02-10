@@ -30,4 +30,4 @@ export const USERS_TABLE_DEFINITION: TableDefinition<UserDto, number> = {
     },
   ],
   selector: (row: UserDto) => row.id
-}
+};

@@ -6,4 +6,4 @@ import { LayoutConfig } from './layout-config';
  */
 export const LAYOUT_CONFIG = new InjectionToken<LayoutConfig>(
   'Layout configuration token'
-)
+);

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRouteSnapshot } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Breadcrumb } from '../models/breadcrumb';
+import { filter } from 'rxjs/operators';
 
 @Injectable()
 export class BreadcrumbService {
@@ -18,15 +19,16 @@ export class BreadcrumbService {
 
   private fetchBreadcrumbs(): void {
     this.router.events
-    .subscribe(event => {
-      if (event instanceof NavigationEnd) {
+      .pipe(
+        filter((event: any) => event instanceof NavigationEnd)
+      )
+      .subscribe(() => {
         const breadcrumbs: Breadcrumb[] = [];
         const root = this.router.routerState.snapshot.root;
 
-        this.getBreadcrumbs(root, [], breadcrumbs)
-        this._breadcrumbs$.next(breadcrumbs); 
-      }
-    });
+        this.getBreadcrumbs(root, [], breadcrumbs);
+        this._breadcrumbs$.next(breadcrumbs);
+      });
   }
 
   private getBreadcrumbs(
@@ -41,7 +43,7 @@ export class BreadcrumbService {
         breadcrumbs.push({
           label: data['breadcrumb'],
           url: url.join('/')
-        })
+        });
       }
       if (route.firstChild) {
         this.getBreadcrumbs(route.firstChild, url, breadcrumbs);

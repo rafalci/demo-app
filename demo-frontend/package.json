@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng build @lib/demo-core && ng build @lib/proxy && ng serve",
     "build": "ng build",
     "build:demo-core": "ng build @lib/demo-core",
     "build:proxy": "ng build @lib/proxy",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "lint:demo-core": "ng lint @lib/demo-core"
   },
   "private": true,
   "dependencies": {
@@ -38,8 +39,8 @@
     "@angular/compiler-cli": "~13.2.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
-    "@typescript-eslint/eslint-plugin": "5.3.0",
-    "@typescript-eslint/parser": "5.3.0",
+    "@typescript-eslint/eslint-plugin": "^5.11.0",
+    "@typescript-eslint/parser": "^5.11.0",
     "eslint": "^8.2.0",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
