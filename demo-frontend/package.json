@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng build @lib/demo-core && ng build @lib/proxy && ng serve",
-    "build": "ng build",
+    "build": "ng build @lib/demo-core && ng build @lib/proxy && ng build",
     "build:demo-core": "ng build @lib/demo-core",
     "build:proxy": "ng build @lib/proxy",
     "watch": "ng build --watch --configuration development",
